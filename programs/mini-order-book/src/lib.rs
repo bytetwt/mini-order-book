@@ -2,6 +2,8 @@ use anchor_lang::prelude::*;
 
 declare_id!("HhYnYsWtT6nCWL3Mw4dZgoicScQd8VcwHUJfk8fdv8Lq");
 
+pub mod state;
+
 #[program]
 pub mod mini_order_book {
     use super::*;
