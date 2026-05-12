@@ -31,6 +31,7 @@ impl<'info> CreateAsk<'info> {
         let current_time = Clock::get()?.unix_timestamp;
 
         self.ask.set_inner(Ask {
+            id: self.market.ask_count,
             market: self.market.key(),
             seller: self.seller.key(),
             price,

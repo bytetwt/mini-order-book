@@ -31,6 +31,7 @@ impl<'info> CreateBid<'info> {
         let current_time = Clock::get()?.unix_timestamp;
 
         self.bid.set_inner(Bid {
+            id: self.market.bid_count,
             market: self.market.key(),
             buyer: self.buyer.key(),
             price,

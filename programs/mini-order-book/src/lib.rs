@@ -13,18 +13,21 @@ pub mod mini_order_book {
 
     pub fn initialize_market(ctx: Context<InitializeMarket>) -> Result<()> {
         ctx.accounts.initialize_market(ctx.bumps)?;
-
         Ok(())
     }
 
     pub fn create_ask(ctx: Context<CreateAsk>, price: u64, size: u64) -> Result<()> {
         ctx.accounts.create_ask(price, size, ctx.bumps)?;
-
         Ok(())
     }
 
     pub fn create_bid(ctx: Context<CreateBid>, price: u64, size: u64) -> Result<()> {
         ctx.accounts.create_bid(price, size, ctx.bumps)?;
+        Ok(())
+    }
+
+    pub fn resolve(ctx: Context<Resolve>) -> Result<()> {
+        ctx.accounts.resolve()?;
 
         Ok(())
     }

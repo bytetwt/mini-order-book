@@ -15,6 +15,7 @@ pub struct Market {
 #[account]
 #[derive(InitSpace)]
 pub struct Ask {
+    pub id: u64,
     pub market: Pubkey,
     pub seller: Pubkey,
     pub price: u64,
@@ -28,6 +29,7 @@ pub struct Ask {
 #[account]
 #[derive(InitSpace)]
 pub struct Bid {
+    pub id: u64,
     pub market: Pubkey,
     pub buyer: Pubkey,
     pub price: u64,
