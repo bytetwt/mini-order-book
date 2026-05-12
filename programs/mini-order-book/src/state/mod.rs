@@ -4,6 +4,7 @@ use anchor_lang::prelude::{
 };
 
 #[account]
+#[derive(InitSpace)]
 pub struct Market {
     pub authority: Pubkey,
     pub ask_count: u64,
