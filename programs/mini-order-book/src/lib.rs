@@ -16,4 +16,16 @@ pub mod mini_order_book {
 
         Ok(())
     }
+
+    pub fn create_ask(ctx: Context<CreateAsk>, price: u64, size: u64) -> Result<()> {
+        ctx.accounts.create_ask(price, size, ctx.bumps)?;
+
+        Ok(())
+    }
+
+    pub fn create_bid(ctx: Context<CreateBid>, price: u64, size: u64) -> Result<()> {
+        ctx.accounts.create_bid(price, size, ctx.bumps)?;
+
+        Ok(())
+    }
 }

@@ -13,6 +13,7 @@ pub struct Market {
 }
 
 #[account]
+#[derive(InitSpace)]
 pub struct Ask {
     pub market: Pubkey,
     pub seller: Pubkey,
@@ -24,6 +25,8 @@ pub struct Ask {
     pub bump: u8,
 }
 
+#[account]
+#[derive(InitSpace)]
 pub struct Bid {
     pub market: Pubkey,
     pub buyer: Pubkey,
@@ -35,7 +38,7 @@ pub struct Bid {
     pub bump: u8,
 }
 
-#[derive(BorshDeserialize, BorshSerialize, Clone)]
+#[derive(BorshDeserialize, BorshSerialize, Clone, InitSpace)]
 pub enum OrderStatus {
     Open,
     PartiallyFilled,
