@@ -1,7 +1,4 @@
-use anchor_lang::prelude::{
-    borsh::{BorshDeserialize, BorshSerialize},
-    *,
-};
+use anchor_lang::prelude::*;
 
 #[account]
 #[derive(InitSpace)]
@@ -40,7 +37,7 @@ pub struct Bid {
     pub bump: u8,
 }
 
-#[derive(BorshDeserialize, BorshSerialize, Clone, InitSpace)]
+#[derive(AnchorSerialize, AnchorDeserialize, Clone, InitSpace)]
 pub enum OrderStatus {
     Open,
     PartiallyFilled,
